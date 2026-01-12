@@ -1,0 +1,23 @@
+{
+  "name": "backend-bills-payment",
+  "version": "1.0.0",
+  "description": "Api Bills Payment",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon dist/index.js",
+    "build": "tsc"
+  },
+  "author": "brCode",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "nodemon": "^3.1.11",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "mysql": "^2.18.1"
+  }
+}
