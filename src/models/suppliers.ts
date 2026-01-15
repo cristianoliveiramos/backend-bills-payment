@@ -10,14 +10,14 @@ class Suppliers {
         return;
       } else {
         res.status(200).json(result);
-        console.log(result)
+        console.log('RESULT: ', result)
         return;
       }
     });
   }
 
-  add(res: any, supplier: any) {
-    const sql = "INSERT INTO suppliers SET ?";
+  add(supplier: any, res: any) {
+    const sql = "INSERT INTO suppliers SET ?;";
 
     connection.query(sql, supplier, (error: any, result: any) => {
       if(error) {

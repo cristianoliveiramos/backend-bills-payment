@@ -7,6 +7,6 @@ export default app => {
   app.post("/suppliers", (req, res) => {
     const supplier = req.body;
     Suppliers.add(res, supplier);
-    console.log(req.body);
+    console.log("BODY: ", req.body);
   });
 };
