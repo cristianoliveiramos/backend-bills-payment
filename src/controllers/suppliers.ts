@@ -5,9 +5,12 @@ export default app => {
   app.get("/suppliers", (req, res) => Suppliers.list(res));
 
   app.post("/suppliers", (req, res) => {
-    const supplier = req.body;
-    Suppliers.add(res, supplier);
+    const supplier = req.body;    
     console.log(req.body);
+    
+    Suppliers.add(res, supplier);
+
+    
 
   });
 
