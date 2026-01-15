@@ -8,5 +8,18 @@ export default app => {
     const supplier = req.body;
     Suppliers.add(res, supplier);
     console.log(req.body);
+
   });
+
+  app.get("/supplier/:id", (req, res) => {
+    const id = parseInt(req.params.id)    
+    Suppliers.listById(id, res)
+  })
+
+  app.put("/supplier/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    const supplier = req.body
+
+    Suppliers.update(id, res, supplier)
+  })
 };
