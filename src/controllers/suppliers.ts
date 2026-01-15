@@ -5,8 +5,24 @@ export default app => {
   app.get("/suppliers", (req, res) => Suppliers.list(res));
 
   app.post("/suppliers", (req, res) => {
-    const supplier = req.body;
+    const supplier = req.body;    
+    console.log(req.body);
+    
     Suppliers.add(res, supplier);
-    console.log("BODY: ", req.body);
+
+    
+
   });
+
+  app.get("/supplier/:id", (req, res) => {
+    const id = parseInt(req.params.id)    
+    Suppliers.listById(id, res)
+  })
+
+  app.put("/supplier/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    const supplier = req.body
+
+    Suppliers.update(id, res, supplier)
+  })
 };
