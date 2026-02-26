@@ -14,6 +14,18 @@ class Payments {
       }
     });
   }
+
+  add(res, payment) {
+    const sql = `INSERT INTO payments SET ?;`
+
+    connection.query(sql, payment, (error, result) => {
+      if(error) {
+        res.status(400).json(error)
+      } else {
+        res.status(200).json(result)
+      }
+    })
+  }
 }
 
 export default new Payments();
